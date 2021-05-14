@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ve.TcpServer", "Com.Ve.TcpServer.csproj", "{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Com.Ve.ServerDataReceiver", "Com.Ve.ServerDataReceiver.csproj", "{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TcpServer", "TcpServer", "{457BCCF5-7C64-4A7E-8335-0396F53062DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetCoreTcpServer", "NetCoreTcpServer", "{77F61CF6-C2B7-4358-AB52-815C26D6439F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreServer", "NetCoreServer\NetCoreServer.csproj", "{6221522A-14CA-446C-88F7-9DB96607081D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6221522A-14CA-446C-88F7-9DB96607081D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6221522A-14CA-446C-88F7-9DB96607081D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6221522A-14CA-446C-88F7-9DB96607081D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6221522A-14CA-446C-88F7-9DB96607081D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7BFBB9F-E692-4C03-8EC3-EC5EF7F8307C} = {457BCCF5-7C64-4A7E-8335-0396F53062DB}
+		{6221522A-14CA-446C-88F7-9DB96607081D} = {77F61CF6-C2B7-4358-AB52-815C26D6439F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DF35AE6-D274-4995-AC89-06281F18477F}
