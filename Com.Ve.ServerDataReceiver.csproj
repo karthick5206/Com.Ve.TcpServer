@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="NetCoreServer\NetCoreServer.csproj" />
+    <Reference Include="NetCoreServer">
+      <HintPath>Lib\NetCoreServer.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
