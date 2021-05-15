@@ -8,23 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="NetCoreServer\**" />
-    <EmbeddedResource Remove="NetCoreServer\**" />
-    <None Remove="NetCoreServer\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="NetCoreServer">
-      <HintPath>Lib\NetCoreServer.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="RavenDB\Pfix\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NullFX.CRC" Version="1.1.2" />
     <PackageReference Include="RavenDB.Client" Version="5.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Ve.Parser\Com.Ve.Parser.csproj" />
   </ItemGroup>
 
   <ItemGroup>

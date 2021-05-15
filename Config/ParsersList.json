@@ -2,17 +2,21 @@
   "Parser": [
     {
       "ParserName": "Teltonika",
+      "ParserDataType": 1,
       "ParserType": 0,
       "Port": "130",
       "RedirectIP": "",
-      "RedirectPort": 0
+      "RedirectPort": 0,
+      "IsAknowledge" :  true
     },
     {
       "ParserName": "Concox",
+      "ParserDataType": 0,
       "ParserType": 0,
       "Port": "180",
       "RedirectIP": "",
-      "RedirectPort": 0
+      "RedirectPort": 0,
+      "IsAknowledge": true
     }
   ]
 }
