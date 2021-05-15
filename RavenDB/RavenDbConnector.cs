@@ -75,7 +75,7 @@ namespace Com.Ve.ServerDataReceiver.RavenDB
 
     public static class DocumentStoreHolder
     {
-        private static X509Certificate2 clientCertificate = new X509Certificate2(@$"{Directory.GetCurrentDirectory()}\RavenDB\Pfix\free.vibhav.client.certificate.pfx");
+        private static X509Certificate2 clientCertificate = new X509Certificate2(@$"{Directory.GetCurrentDirectory()}/RavenDB/Pfix/free.vibhav.client.certificate.pfx");
 
         private static readonly Lazy<IDocumentStore> LazyStore =
             new Lazy<IDocumentStore>(() =>

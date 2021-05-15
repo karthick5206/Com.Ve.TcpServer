@@ -13,7 +13,7 @@ namespace Com.Ve.ServerDataReceiver
     {
         static void Main(string[] args)
         {
-            var parsers = JsonConvert.DeserializeObject<ParserList>(File.ReadAllText($@"{Directory.GetCurrentDirectory()}\Config\ParsersList.json"));
+            var parsers = JsonConvert.DeserializeObject<ParserList>(File.ReadAllText($@"{Directory.GetCurrentDirectory()}/Config/ParsersList.json"));
             Console.WriteLine($"Parsers Count :{parsers.Parser.Count}");
 
             foreach (var parser in parsers.Parser)
