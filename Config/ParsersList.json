@@ -1,0 +1,18 @@
+{
+  "Parser": [
+    {
+      "ParserName": "Teltonika",
+      "ParserType": 0,
+      "Port": "130",
+      "RedirectIP": "",
+      "RedirectPort": 0
+    },
+    {
+      "ParserName": "Concox",
+      "ParserType": 0,
+      "Port": "180",
+      "RedirectIP": "",
+      "RedirectPort": 0
+    }
+  ]
+}

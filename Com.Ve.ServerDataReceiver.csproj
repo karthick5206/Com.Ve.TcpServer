@@ -19,4 +19,21 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="RavenDB\Pfix\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RavenDB.Client" Version="5.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\ParsersList.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RavenDB\Pfix\free.vibhav.client.certificate.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -115,7 +115,7 @@ namespace NetCoreServer
         /// </summary>
         public int OptionSendBufferSize { get; set; } = 8192;
 
-        public virtual void OnReceived(byte[] buffer, long offset, long size) { }
+        public virtual void OnReceived(TcpSession tcpSession, byte[] buffer, long offset, long size) { }
 
         #region Start/Stop server
 

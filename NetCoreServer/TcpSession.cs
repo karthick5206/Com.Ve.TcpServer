@@ -352,7 +352,7 @@ namespace NetCoreServer
 
                 // Call the buffer received handler
                 OnReceived(buffer, 0, received);
-                
+
             }
 
             // Check for socket error
@@ -641,7 +641,7 @@ namespace NetCoreServer
         /// <remarks>
         /// Notification is called when another chunk of buffer was received from the client
         /// </remarks>
-        protected virtual void OnReceived(byte[] buffer, long offset, long size) { Server.OnReceived(buffer, offset, size); }
+        protected virtual void OnReceived(byte[] buffer, long offset, long size) { Server.OnReceived(this, buffer, offset, size); }
         /// <summary>
         /// Handle buffer sent notification
         /// </summary>
