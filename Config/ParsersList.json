@@ -7,16 +7,18 @@
       "Port": "130",
       "RedirectIP": "",
       "RedirectPort": 0,
-      "IsAknowledge" :  true
+      "IsAknowledge": true,
+      "IsForwardData": false
     },
     {
       "ParserName": "Concox",
       "ParserDataType": 1,
       "ParserType": 0,
       "Port": "180",
-      "RedirectIP": "",
-      "RedirectPort": 0,
-      "IsAknowledge": true
+      "RedirectIP": "136.185.12.181",
+      "RedirectPort": 180,
+      "IsAknowledge": true,
+      "IsForwardData": true
     }
   ]
 }

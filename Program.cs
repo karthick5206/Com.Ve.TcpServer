@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using Com.Ve.Parser;
 using Com.Ve.Parser.Utilities;
+using Com.Ve.ServerDataReceiver.DataForwarder;
 using NetCoreServer;
 using Newtonsoft.Json;
 
@@ -45,6 +46,7 @@ namespace Com.Ve.ServerDataReceiver
         public string RedirectIp { get; set; }
         public int RedirectPort { get; set; }
         public bool IsAknowledge { get; set; }
+        public bool IsForwardData { get; set; }
     }
 
     public enum ParserDataType
@@ -64,6 +66,7 @@ namespace Com.Ve.ServerDataReceiver
     {
         Parser ParserInfo { get; set; }
         public string IMEI { get; set; }
+        public TcpForwarder TcpForwarder { get; set; }
         public TcpDataReceiver(Parser parser) : base(IPAddress.Any, parser.Port)
         {
             ParserInfo = parser;
@@ -82,6 +85,19 @@ namespace Com.Ve.ServerDataReceiver
                 SendAcknowledgeMent(tcpSession, receivedData);
             }
             RavenDB.RavenDbConnector.Add(new RavenDB.GpsData { Data = receivedData });
+            if (ParserInfo.IsForwardData)
+            {
+                if (!string.IsNullOrEmpty(ParserInfo.RedirectIp) && ParserInfo.RedirectPort > 0)
+                {
+                    if (TcpForwarder == null)
+                    {
+                        Console.WriteLine($"Forwarding data:{receivedData}");
+
+                        TcpForwarder = new TcpForwarder(IPAddress.Parse(ParserInfo.RedirectIp), ParserInfo.RedirectPort);
+                        TcpForwarder.ForwardData(receivedDataByteArray);
+                    }
+                }
+            }
         }
 
         protected override void OnError(SocketError error)
