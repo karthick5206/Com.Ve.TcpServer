@@ -96,6 +96,11 @@ namespace Com.Ve.ServerDataReceiver
                         TcpForwarder = new TcpForwarder(IPAddress.Parse(ParserInfo.RedirectIp), ParserInfo.RedirectPort);
                         TcpForwarder.ForwardData(receivedDataByteArray);
                     }
+                    else
+                    {
+                        Console.WriteLine($"Forwarding data:{receivedData}");
+                        TcpForwarder.ForwardData(receivedDataByteArray);
+                    }
                 }
             }
         }
