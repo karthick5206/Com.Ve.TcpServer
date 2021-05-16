@@ -11,7 +11,7 @@
     },
     {
       "ParserName": "Concox",
-      "ParserDataType": 0,
+      "ParserDataType": 1,
       "ParserType": 0,
       "Port": "180",
       "RedirectIP": "",
