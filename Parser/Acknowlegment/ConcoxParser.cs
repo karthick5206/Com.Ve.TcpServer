@@ -26,23 +26,9 @@ namespace Com.Ve.Parser
                 switch (packetType)
                 {
                     case "01":
-                       
-                        serialNumber.CopyTo(heartbeatResponse, 4);
-                        var sendCRC = CrcGenerator.crc_bytes(heartbeatResponse.Skip(2).Take(heartbeatResponse.Length - 6).ToArray());
-
-
-                        heartbeatResponse[heartbeatResponse.Length - 4] = (byte)((sendCRC >> 8) & 0xFF);
-                        heartbeatResponse[heartbeatResponse.Length - 3] = (byte)((sendCRC) & 0xFF);
-
-                        acknowledge = SplitData.GetHexValueFromByteArray(heartbeatResponse);
-
-                        Console.WriteLine("Send Message : '{0}'", acknowledge);
-                        break;
-
-                    case "13":
                         serialNumber.CopyTo(loginResponse, 4);
 
-                        sendCRC = CrcGenerator.crc_bytes(loginResponse.Skip(2).Take(loginResponse.Length - 6).ToArray());
+                        var sendCRC = CrcGenerator.crc_bytes(loginResponse.Skip(2).Take(loginResponse.Length - 6).ToArray());
 
                         loginResponse[loginResponse.Length - 4] = (byte)((sendCRC >> 8) & 0xFF);
                         loginResponse[loginResponse.Length - 3] = (byte)((sendCRC) & 0xFF);
@@ -54,6 +40,20 @@ namespace Com.Ve.Parser
                         Console.WriteLine("Imei : '{0}'", IMEI);
 
                         Console.WriteLine("Acknowledge Location Data : '{0}'", acknowledge);
+
+                        break;
+
+                    case "13":
+                        serialNumber.CopyTo(heartbeatResponse, 4);
+                        sendCRC = CrcGenerator.crc_bytes(heartbeatResponse.Skip(2).Take(heartbeatResponse.Length - 6).ToArray());
+
+
+                        heartbeatResponse[heartbeatResponse.Length - 4] = (byte)((sendCRC >> 8) & 0xFF);
+                        heartbeatResponse[heartbeatResponse.Length - 3] = (byte)((sendCRC) & 0xFF);
+
+                        acknowledge = SplitData.GetHexValueFromByteArray(heartbeatResponse);
+
+                        Console.WriteLine("Send Message : '{0}'", acknowledge);                        
 
                         break;
 
