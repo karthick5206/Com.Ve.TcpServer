@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using Com.Ve.Parser;
 using Com.Ve.Parser.Utilities;
+using Com.Ve.Rabbitmq;
 using Com.Ve.ServerDataReceiver.DataForwarder;
 using NetCoreServer;
 using Newtonsoft.Json;
@@ -72,6 +73,11 @@ namespace Com.Ve.ServerDataReceiver
             ParserInfo = parser;
         }
 
+        public void ReceivedData(GpsData gpsData)
+        {
+            Console.WriteLine($"Recieved Data:{gpsData.Message} DateTime:{gpsData.CreatedDateTime} DeviceName:{gpsData.DeviceName}");
+        }
+
         public override void OnReceived(TcpSession tcpSession, byte[] buffer, long offset, long size)
         {
             var receivedDataByteArray = new byte[size];
@@ -85,6 +91,8 @@ namespace Com.Ve.ServerDataReceiver
                 SendAcknowledgeMent(tcpSession, receivedData);
             }
             RavenDB.RavenDbConnector.Add(new RavenDB.GpsData { Data = receivedData });
+            Rabbitmq.RabbitBusProvider.AddToQueue(new Rabbitmq.GpsData { DeviceName = ParserInfo.ParserName, CreatedDateTime = DateTime.Now, Message = receivedData }, ParserInfo.ParserName);
+            //Rabbitmq.QueueHandler.AddToSubscriber(ParserInfo.ParserName, ReceivedData);
             if (ParserInfo.IsForwardData)
             {
                 if (!string.IsNullOrEmpty(ParserInfo.RedirectIp) && ParserInfo.RedirectPort > 0)

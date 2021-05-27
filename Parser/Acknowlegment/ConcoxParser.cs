@@ -51,6 +51,8 @@ namespace Com.Ve.Parser
                         heartbeatResponse[heartbeatResponse.Length - 4] = (byte)((sendCRC >> 8) & 0xFF);
                         heartbeatResponse[heartbeatResponse.Length - 3] = (byte)((sendCRC) & 0xFF);
 
+
+
                         acknowledge = SplitData.GetHexValueFromByteArray(heartbeatResponse);
 
                         Console.WriteLine("Send Message : '{0}'", acknowledge);                        
@@ -58,6 +60,7 @@ namespace Com.Ve.Parser
                         break;
 
                     case "16":
+                    case "26":
                         int alarmPacketLen = alarmResponse.Length - 5;
                         alarmResponse[2] = (byte)(alarmPacketLen & 0xFF);
 
