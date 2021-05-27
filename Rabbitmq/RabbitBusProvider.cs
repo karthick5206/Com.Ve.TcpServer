@@ -13,7 +13,7 @@ namespace Com.Ve.Rabbitmq
         public static IBus InitializeBus(string connectionString)
         {
             if (string.IsNullOrEmpty(connectionString))
-                connectionString = "host=35.245.55.209;username=vibhav;password=server@vibhav1";
+                connectionString = "host=localhost;username=vibhav;password=server@vibhav1";
 
             return RabbitHutch.CreateBus(connectionString);
         }
