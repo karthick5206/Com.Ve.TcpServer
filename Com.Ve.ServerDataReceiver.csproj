@@ -5,7 +5,6 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Com.Ve.ServerDataReceiver</AssemblyName>
     <RootNamespace>Com.Ve.ServerDataReceiver</RootNamespace>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/karthick5206/Com.Ve.TcpServer</RepositoryUrl>
   </PropertyGroup>
 
