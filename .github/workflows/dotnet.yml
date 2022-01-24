@@ -26,5 +26,5 @@ jobs:
     - name: package
       run: dotnet pack Com.Ve.TcpServer.sln -c Release -o out
     - name: nuget      
-      run: dotnet nuget push ./out/*.nupkg --api-key "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" --source "https://nuget.pkg.github.com/karthick5206/index.json" --skip-duplicate
+      run: dotnet nuget push ./out/*.nupkg --api-key "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" --source "https://nuget.pkg.github.com/karthick5206/index.json" --skip-duplicate
     
