@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace Com.Ve.ServerDataReceiver.RavenDB
 {
+    /// <summary>
+    /// Added Comment
+    /// </summary>
     public static class RavenDbConnector
     {
         static RavenDbConnector()

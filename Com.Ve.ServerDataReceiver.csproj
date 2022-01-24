@@ -6,6 +6,8 @@
     <AssemblyName>Com.Ve.ServerDataReceiver</AssemblyName>
     <RootNamespace>Com.Ve.ServerDataReceiver</RootNamespace>
     <RepositoryUrl>https://github.com/karthick5206/Com.Ve.TcpServer</RepositoryUrl>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)2</Version>
   </PropertyGroup>
 
   <ItemGroup>
