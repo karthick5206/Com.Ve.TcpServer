@@ -26,4 +26,4 @@ jobs:
     - name: package
       run: dotnet pack Com.Ve.TcpServer.sln --configuration Release
     - name: nuget
-      run: dotnet nuget push "bin/Release/Com.Ve.TcpServer.1.0.0.nupkg"  --api-key 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 --source 
+      run: dotnet nuget push "bin/Release/Com.Ve.TcpServer.1.0.0.nupkg"  --api-key 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 --source "https://github.com/karthick5206/Com.Ve.TcpServer" 
