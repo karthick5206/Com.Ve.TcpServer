@@ -21,6 +21,7 @@ namespace Com.Ve.ServerDataReceiver.RavenDB
         {
             try
             {
+                //Hiiiiiiii
                 Console.WriteLine($"Initializing Raven Db..");
                 using (IDocumentSession session = DocumentStoreHolder.Store.OpenSession())
                 {
